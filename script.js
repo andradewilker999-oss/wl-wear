@@ -35,5 +35,20 @@ document.getElementById("searchBtn").onclick=()=>{document.getElementById("searc
 document.querySelector("[data-close]").onclick=()=>document.getElementById("searchPanel").classList.add("hidden");
 document.getElementById("searchInput").addEventListener("input",renderProducts);
 document.getElementById("newsletter").onsubmit=e=>{e.preventDefault();alert("Cadastro realizado!");e.target.reset()};
-document.getElementById("checkout").onclick=()=>{if(!cart.length)return alert("Adicione um produto ao carrinho.");alert("Protótipo: aqui entra o checkout real com Pix/cartão e endereço.")};
+document.getElementById("checkout").onclick=()=>{
+  if(!cart.length)return alert("Adicione um produto ao carrinho.");
+
+  const chavePix="61992823440";
+  const total=cart.reduce((s,p)=>s+p.price,0);
+
+  navigator.clipboard.writeText(chavePix);
+
+  alert(
+    "Pedido W&L Wear\n\n"+
+    "Total: "+money(total)+"\n\n"+
+    "Chave Pix copiada!\n"+
+    chavePix+
+    "\n\nFaça o pagamento e envie o comprovante pelo WhatsApp."
+  );
+};
 renderProducts();renderCart();
