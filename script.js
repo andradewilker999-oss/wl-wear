@@ -34,32 +34,29 @@ document.getElementById("searchBtn").onclick=()=>{document.getElementById("searc
 document.querySelector("[data-close]").onclick=()=>document.getElementById("searchPanel").classList.add("hidden");
 document.getElementById("searchInput").addEventListener("input",renderProducts);
 document.getElementById("newsletter").onsubmit=e=>{e.preventDefault();alert("Cadastro realizado!");e.target.reset()};
-document.getElementById("checkout").onclick=()=>{
-  if(!cart.length){
+document.getElementById("checkout").onclick = () => {
+  if (!cart.length) {
     alert("Adicione um produto ao carrinho.");
     return;
   }
 
-  const chavePix="61992823440";
-  const telefoneWhatsApp="61994379523";
-  const total=cart.reduce((s,p)=>s+p.price,0);
+  const chavePix = "61992823440";
+  const telefoneWhatsApp = "61994379523";
+  const total = cart.reduce((s, p) => s + p.price, 0);
 
-  const itens=cart.map(p=>
-    `<div class="checkout-item">
+  const itens = cart.map(p => `
+    <div class="checkout-item">
       <span>${p.name}</span>
       <strong>${money(p.price)}</strong>
-    </div>`
-  ).join("");
+    </div>
+  `).join("");
 
-  const checkoutBox=document.createElement("div");
+  const checkoutBox = document.createElement("div");
 
-  checkoutBox.id="checkoutModal";
-
-  checkoutBox.innerHTML=`
+  checkoutBox.innerHTML = `
     <div class="checkout-overlay"></div>
 
     <div class="checkout-card">
-
       <button class="checkout-close">×</button>
 
       <p class="checkout-label">W&L WEAR</p>
@@ -93,41 +90,37 @@ document.getElementById("checkout").onclick=()=>{
       <p class="checkout-note">
         Após realizar o pagamento, envie o comprovante pelo WhatsApp.
       </p>
-
     </div>
   `;
 
   document.body.appendChild(checkoutBox);
 
-  document.getElementById("copyPix").onclick=()=>{
+  document.getElementById("copyPix").onclick = () => {
     navigator.clipboard.writeText(chavePix);
+    document.getElementById("copyPix").textContent = "PIX COPIADO ✓";
 
-    document.getElementById("copyPix").textContent="PIX COPIADO ✓";
-
-    setTimeout(()=>{
-      document.getElementById("copyPix").textContent="COPIAR PIX";
-    },2000);
+    setTimeout(() => {
+      document.getElementById("copyPix").textContent = "COPIAR PIX";
+    }, 2000);
   };
 
-  document.querySelector(".checkout-close").onclick=()=>{
+  const fecharCheckout = () => {
     checkoutBox.remove();
   };
 
-  document.querySelector(".checkout-overlay").onclick=()=>{
-    checkoutBox.remove();
-  };
+  checkoutBox.querySelector(".checkout-close").onclick = fecharCheckout;
+  checkoutBox.querySelector(".checkout-overlay").onclick = fecharCheckout;
 
-  document.getElementById("sendWhatsApp").onclick=()=>{
-
-    const mensagem=
-      "Olá! Quero finalizar meu pedido na W&L Wear.%0A%0A"+
-      "Total: "+money(total)+"%0A%0A"+
-      "Produtos:%0A"+
-      cart.map(p=>"- "+p.name+" - "+money(p.price)).join("%0A")+
+  document.getElementById("sendWhatsApp").onclick = () => {
+    const mensagem =
+      "Olá! Quero finalizar meu pedido na W&L Wear.%0A%0A" +
+      "Total: " + money(total) + "%0A%0A" +
+      "Produtos:%0A" +
+      cart.map(p => "- " + p.name + " - " + money(p.price)).join("%0A") +
       "%0A%0AVou realizar o pagamento via Pix e enviar o comprovante.";
 
     window.open(
-      "https://wa.me/"+telefoneWhatsApp+"?text="+mensagem,
+      "https://wa.me/" + telefoneWhatsApp + "?text=" + mensagem,
       "_blank"
     );
   };
