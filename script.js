@@ -40,8 +40,8 @@ document.getElementById("checkout").onclick = () => {
     return;
   }
 
-  const chavePix = "61992823440";
-  const telefoneWhatsApp = "5561994379523";
+  const chavePix = "SUA_CHAVE_PIX";
+  const telefoneWhatsApp = "55DDDNUMERO";
   const total = cart.reduce((s, p) => s + p.price, 0);
 
   const itens = cart.map(p => `
@@ -57,7 +57,6 @@ document.getElementById("checkout").onclick = () => {
     <div class="checkout-overlay"></div>
 
     <div class="checkout-card">
-
       <button class="checkout-close">×</button>
 
       <p class="checkout-label">W&L WEAR</p>
@@ -65,7 +64,6 @@ document.getElementById("checkout").onclick = () => {
 
       <div class="checkout-section">
         <h3>Seu pedido</h3>
-
         ${itens}
 
         <div class="checkout-total">
@@ -76,7 +74,6 @@ document.getElementById("checkout").onclick = () => {
 
       <div class="checkout-section pix-section">
         <h3>Pagamento via Pix</h3>
-
         <p>Copie a chave Pix abaixo e faça o pagamento.</p>
 
         <div class="pix-box">
@@ -92,7 +89,6 @@ document.getElementById("checkout").onclick = () => {
       <p class="checkout-note">
         Após realizar o pagamento, envie o comprovante pelo WhatsApp.
       </p>
-
     </div>
   `;
 
@@ -100,7 +96,6 @@ document.getElementById("checkout").onclick = () => {
 
   document.getElementById("copyPix").onclick = () => {
     navigator.clipboard.writeText(chavePix);
-
     document.getElementById("copyPix").textContent = "PIX COPIADO ✓";
 
     setTimeout(() => {
@@ -108,12 +103,10 @@ document.getElementById("checkout").onclick = () => {
     }, 2000);
   };
 
-  const fecharCheckout = () => {
-    checkoutBox.remove();
-  };
+  const fechar = () => checkoutBox.remove();
 
-  checkoutBox.querySelector(".checkout-close").onclick = fecharCheckout;
-  checkoutBox.querySelector(".checkout-overlay").onclick = fecharCheckout;
+  checkoutBox.querySelector(".checkout-close").onclick = fechar;
+  checkoutBox.querySelector(".checkout-overlay").onclick = fechar;
 
   document.getElementById("sendWhatsApp").onclick = () => {
     const mensagem =
