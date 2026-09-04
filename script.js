@@ -1,9 +1,9 @@
 const products=[
 {id:1,name:"Camiseta Polo ",category:"Camisetas",price:100.00,badge:"NOVO"},
 {id:2,name:"Camiseta Hugo Boss Branca",category:"Camisetas",price:119.90,badge:"NOVO"},
-{id:3,name:"Moletom Essential Preto",category:"Moletons",price:189.90,badge:"NOVO"},
+{id:3,name:"Juliete",category:"Óculos",price:189.90,badge:"NOVO"},
 {id:4,name:"Calça Cargo Preta",category:"Calças",price:169.90,badge:"-15%"},
-{id:6,name:"Camiseta Oversized Off-White",category:"Feminino",price:139.90,badge:"NOVO"},
+{id:6,name:"Tênis ",category:"Tênis",price:139.90,badge:"NOVO"},
 
 {id:9,name:"Shoulder Bag W&L",category:"Acessórios",price:79.90,badge:""},
 {id:10,name:"Camiseta Logo W&L",category:"Camisetas",price:124.90,badge:""}];
