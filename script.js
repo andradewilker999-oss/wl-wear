@@ -41,7 +41,7 @@ document.getElementById("checkout").onclick = () => {
   }
 
   const chavePix = "61992823440";
-  const telefoneWhatsApp = "5561994379523";
+  const telefoneWhatsApp = "61994379523";
 
   const total = cart.reduce((s, p) => s + p.price, 0);
 
