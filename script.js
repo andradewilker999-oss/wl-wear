@@ -1,5 +1,5 @@
 const products=[
-{id:1,name:"Camiseta Classic Preta",category:"Camisetas",price:129.90,badge:"NOVO"},
+{id:1,name:"Camiseta Polo ",category:"Camisetas",price:129.90,badge:"NOVO"},
 {id:2,name:"Camiseta Basic Branca",category:"Camisetas",price:119.90,badge:"NOVO"},
 {id:3,name:"Moletom Essential Preto",category:"Moletons",price:189.90,badge:"NOVO"},
 {id:4,name:"Calça Cargo Preta",category:"Calças",price:169.90,badge:"-15%"},
