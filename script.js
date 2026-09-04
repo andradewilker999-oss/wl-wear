@@ -41,8 +41,8 @@ document.getElementById("checkout").onclick = () => {
     return;
   }
 
-  const chavePix = "COLOQUE_SUA_CHAVE_PIX_AQUI";
-  const telefoneWhatsApp = "COLOQUE_SEU_NUMERO_AQUI";
+  const chavePix = "61992823440";
+  const telefoneWhatsApp = "55994379523";
   const total = cart.reduce((s, p) => s + p.price, 0);
 
   const itens = cart.map(p => `
@@ -131,9 +131,10 @@ document.getElementById("checkout").onclick = () => {
       cart.map(p => "- " + p.name + " - " + money(p.price)).join("%0A") +
       "%0A%0AVou realizar o pagamento via Pix e enviar o comprovante.";
 
-    window.open(
-      "https://wa.me/" + telefoneWhatsApp + "?text=" + mensagem,
-      "_blank"
+window.open(
+  "https://wa.me/" + telefoneWhatsApp + "?text=" + encodeURIComponent(mensagem),
+  "_blank"
+);
     );
 
   };
