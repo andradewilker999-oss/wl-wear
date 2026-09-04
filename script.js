@@ -40,8 +40,8 @@ document.getElementById("checkout").onclick = () => {
     return;
   }
 
-  const chavePix = "COLOQUE_SUA_CHAVE_PIX_AQUI";
-  const telefoneWhatsApp = "COLOQUE_SEU_NUMERO_AQUI";
+  const chavePix = "61992823440";
+  const telefoneWhatsApp = "5561994379523";
 
   const total = cart.reduce((s, p) => s + p.price, 0);
 
