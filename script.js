@@ -5,8 +5,7 @@ const products=[
 {id:4,name:"Calça Cargo Preta",category:"Calças",price:169.90,badge:"-15%"},
 {id:5,name:"Boné W&L Preto",category:"Acessórios",price:89.90,badge:"NOVO"},
 {id:6,name:"Camiseta Oversized Off-White",category:"Feminino",price:139.90,badge:"NOVO"},
-{id:7,name:"Moletom Urban Cinza",category:"Moletons",price:199.90,badge:""},
-{id:8,name:"Calça Wide Leg Preta",category:"Feminino",price:179.90,badge:""},
+
 {id:9,name:"Shoulder Bag W&L",category:"Acessórios",price:79.90,badge:""},
 {id:10,name:"Camiseta Logo W&L",category:"Camisetas",price:124.90,badge:""}];
 
