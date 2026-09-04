@@ -43,12 +43,24 @@ document.getElementById("checkout").onclick=()=>{
 
   navigator.clipboard.writeText(chavePix);
 
-  alert(
-    "Pedido W&L Wear\n\n"+
+  const telefoneWhatsApp="61994379523";
+
+  const mensagem=
+    "Olá! Quero finalizar meu pedido na W&L Wear.\n\n"+
     "Total: "+money(total)+"\n\n"+
-    "Chave Pix copiada!\n"+
-    chavePix+
-    "\n\nFaça o pagamento e envie o comprovante pelo WhatsApp."
+    "Vou realizar o pagamento via Pix e enviar o comprovante.";
+
+  alert(
+    "Chave Pix copiada!\n\n"+
+    "Total: "+money(total)+"\n\n"+
+    "Depois do pagamento, clique em OK para enviar o pedido pelo WhatsApp."
+  );
+
+  window.open(
+    "https://wa.me/"+telefoneWhatsApp+"?text="+encodeURIComponent(mensagem),
+    "_blank"
   );
 };
-renderProducts();renderCart();
+
+renderProducts();
+renderCart();
